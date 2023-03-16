@@ -1,20 +1,28 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AddTaskPage } from './pages/add-task/add-task.page';
+import { HomePage } from './pages/home/home.page';
+import { HistoryPage } from './pages/history/history.page';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+  component:HomePage
+}
+  ,
+  {
+    path:'add-task',
+    component: AddTaskPage
   },
   {
-    path: 'add-task',
-    loadChildren: () => import('./pages/add-task/add-task.module').then( m => m.AddTaskPageModule)
+    path: 'history',
+    component:HistoryPage
   },
+  // {
+  //   path: '**',
+  //   redirectTo: 'home',
+  // },
+
 ];
 
 @NgModule({

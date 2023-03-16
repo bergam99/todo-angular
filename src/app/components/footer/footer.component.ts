@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AddTaskPage } from '../../pages/add-task/add-task.page';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
+
+
 
   ngOnInit() {}
 

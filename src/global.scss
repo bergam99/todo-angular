@@ -1,26 +1,55 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans+Limbu&family=Noto+Serif+Khojki&family=PT+Serif:wght@400;700&family=Playfair+Display:ital@1&family=Poppins:wght@100;400&family=Roboto:ital,wght@0,700;0,900;1,500&display=swap');
+// font-family: 'Quicksand', sans-serif;
+
+
+/* normalize */
+*, body{
+  padding: 0;
+  margin: 0;
+  list-style:none;
+  font-family: 'Quicksand', sans-serif;
+}
+button{
+  all:unset;
+}
+
+Img{
+Display:block;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+/* fond */
+body{
+  background-color: var(--color-gray);
+}
+
+/* color library */
+:root{
+  --color-dark-navy : #040722;
+  --color-lignt-navy : #1D2038;
+  --color-pink : #E475F1;
+  --color-yellow : #F3D24F;
+  --color-blue : #64A7D9;
+  --color-green : #88E7A1;
+}
+
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+// @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+// @import "~@ionic/angular/css/normalize.css";
+// @import "~@ionic/angular/css/structure.css";
+// @import "~@ionic/angular/css/typography.css";
+// @import '~@ionic/angular/css/display.css';
 
-/* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+// // /* Optional CSS utils that can be commented out */
+// @import "~@ionic/angular/css/padding.css";
+// @import "~@ionic/angular/css/float-elements.css";
+// @import "~@ionic/angular/css/text-alignment.css";
+// @import "~@ionic/angular/css/text-transformation.css";
+// @import "~@ionic/angular/css/flex-utils.css";
+
