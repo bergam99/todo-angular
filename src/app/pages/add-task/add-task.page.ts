@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-task.page.scss'],
 })
 export class AddTaskPage implements OnInit {
+  isShoppingSelected:boolean = false;
+  isInscureSelected:boolean = false;
+  isWorkSelected:boolean = false;
+  isBrokedSelected:boolean = false;
+  isCleanSelected:boolean = false;
+  isAnotherSelected:boolean = false;
+
 
   constructor() { }
 

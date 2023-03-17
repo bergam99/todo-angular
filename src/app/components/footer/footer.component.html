@@ -1,5 +1,18 @@
-<main class="buttons footer">
-  <button routerLink="/"><img src="assets/icons/list-off.png" alt=""></button>
-  <button routerLink="/add-task"><img src="assets/icons/add-off.png" alt=""></button>
-  <button routerLink="/history"><img src="assets/icons/history-off.png" alt=""></button>
-</main>
+<ul class="buttons footer">
+  <li [class.active]="isPage1Active">
+    <button routerLink="/">
+      <!-- The "active" class is bound to the "isPageXActive" property using Angular's property binding syntax. -->
+      <p [class.active-icon-home]="isPage1Active"><img [class.active-icon-home]="isPage1Active" src="assets/vector-icon/home.png" alt="home"></p>
+    </button>
+  </li>
+  <li [class.active]="isPage2Active">
+    <button routerLink="/add-task">
+      <p [class.active-icon-add]="isPage2Active"><img [class.active-icon-add]="isPage2Active" src="assets/vector-icon/add.png" alt="add"></p>
+    </button>
+  </li>
+  <li [class.active]="isPage3Active">
+    <button routerLink="/history">
+      <p [class.active-icon-history]="isPage3Active"><img [class.active-icon-history]="isPage3Active" src="assets/vector-icon/history.png" alt="history"></p>
+    </button>
+  </li>
+</ul>

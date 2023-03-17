@@ -1,3 +1,55 @@
+<main>
+  <p>Sélectionnez votre catégorie* :</p>
+
+  <ul class="category flex">
+    <li [class.active]="isShoppingSelected">
+      <button>
+        <p [class.active-icon-selected]="isShoppingSelected"><span>🛍️</span></p>
+      </button>
+    </li>
+
+    <li [class.active]="isInscureSelected">
+      <button>
+        <p [class.active-icon-selected]="isInscureSelected"><span>💊</span></p>
+      </button>
+    </li>
+
+    <li [class.active]="isWorkSelected">
+      <button>
+        <p [class.active-icon-selected]="isWorkSelected"><span>💼</span></p>
+      </button>
+    </li>
+
+    <li [class.active]="isBrokedSelected">
+      <button>
+        <p [class.active-icon-selected]="isBrokedSelected"><span>💸</span></p>
+      </button>
+    </li>
+
+    <li [class.active]="isCleanSelected">
+      <button>
+        <p [class.active-icon-selected]="isCleanSelected"><span>🧼</span></p>
+      </button>
+    </li>
+
+    <li [class.active]="isAnotherSelected">
+      <button>
+        <p [class.active-icon-selected]="isAnotherSelected"><span>🤷‍♀️</span></p>
+      </button>
+    </li>
+  </ul>
 
 
-<p>AddTaskPage</p>
+  <div class="form">
+    <p class>Quelle tâche avez vous à effectuer* ?</p>
+    <input class="input" type="text" placeholder="Exemple : Faire les courses"><br>
+    <input type="radio" id="urgent" name="urgent" value="urgent">&nbsp;&nbsp;La tâche est urgente ⚠️
+  </div>
+
+
+  <div class="flex fix">
+    <button class="valider">Valider ma tâche</button>
+  </div>
+
+
+</main>

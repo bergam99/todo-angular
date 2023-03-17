@@ -2,12 +2,53 @@
   height: 100px !important;
   display: flex;
   justify-content: center;
+  align-items:center;
   gap: 25px;
   border-top: 1px white solid;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
-img{
-  width:66px;
+// "relative" to create a positioning context for the img tag
+.buttons li p {
+  position: relative;
+  width: 66px;
   height: 66px;
+  border-radius: 50px;
+
 }
+
+
+// "absolute" to position it within the p tag circle
+// The top and left properties are set to 50% each to move the top-left corner of the img tag to the center of the p tag circle.
+// transform property is used to translate the img tag back by 50% of its own width and height to center it perfectly.
+.buttons li p img {
+  width:30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.active-icon-home{
+  background-color:var(--color-green) !important;
+}
+
+.active-icon-add{
+  background-color:var(--color-yellow);
+
+}
+
+.active-icon-history{
+  background-color:var(--color-pink);
+}
+
+.default-icon {
+  background-color:var(---color-light-navy);
+}
+
