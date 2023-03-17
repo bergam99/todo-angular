@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { TodoServiceService } from './todo-service.service';
+import { TodoServiceService } from './todo.service';
 
 
 describe('TodoServiceService', () => {
