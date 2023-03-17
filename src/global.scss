@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans+Limbu&family=Noto+Serif+Khojki&family=PT+Serif:wght@400;700&family=Playfair+Display:ital@1&family=Poppins:wght@100;400&family=Quicksand&family=Roboto:ital,wght@0,700;0,900;1,500&display=swap');
 // font-family: 'Quicksand', sans-serif;
 
-
 /* normalize */
 *, body, html{
   padding: 0;
   margin: 0;
   list-style:none;
   font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   background-color:var(--color-dark-navy);
   color:white;
 }
@@ -32,7 +32,7 @@ body{
 /* color library */
 :root{
   --color-dark-navy : #040722;
-  --color-lignt-navy : #1D2038;
+  --color-light-navy : #1D2038;
   --color-pink : #E475F1;
   --color-yellow : #F3D24F;
   --color-blue : #64A7D9;
@@ -40,19 +40,19 @@ body{
 }
 
 
-/* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+// /* Core CSS required for Ionic components to work properly */
+// @import "~@ionic/angular/css/core.css";
 
-/* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+// /* Basic CSS for apps built with Ionic */
+// @import "~@ionic/angular/css/normalize.css";
+// @import "~@ionic/angular/css/structure.css";
+// @import "~@ionic/angular/css/typography.css";
+// @import '~@ionic/angular/css/display.css';
 
-// // /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+// // // /* Optional CSS utils that can be commented out */
+// @import "~@ionic/angular/css/padding.css";
+// @import "~@ionic/angular/css/float-elements.css";
+// @import "~@ionic/angular/css/text-alignment.css";
+// @import "~@ionic/angular/css/text-transformation.css";
+// @import "~@ionic/angular/css/flex-utils.css";
 
