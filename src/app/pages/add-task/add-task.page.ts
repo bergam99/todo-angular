@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService} from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-add-task',
@@ -14,9 +15,20 @@ export class AddTaskPage implements OnInit {
   isAnotherSelected:boolean = false;
 
 
-  constructor() { }
+  todoItem: string;
+  todoItemArray:string[]=[];
+
+  constructor(private todoService: TodoService) {
+    this.todoItem = todoService.todoItem;
+  }
+
 
   ngOnInit() {
+  }
+
+  addItem() {
+    this.todoService.addItem(this.todoItem);
+    this.todoItem = '';
   }
 
 }
