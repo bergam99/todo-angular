@@ -40,20 +40,25 @@
   </ul>
 
 
-  <div class="form">
-    <p class>Quelle tâche avez vous à effectuer* ?</p>
-    <input [(ngModel)]="todoItem" class="input" type="text" placeholder="Exemple : Faire les courses"><br>
-    <input type="radio" id="urgent" name="urgent" value="urgent">&nbsp;&nbsp;La tâche est urgente ⚠️
-  </div>
 
+  <form [formGroup]="registerationForm">
 
-  <div class="flex fix">
-    <button class="valider" (click)="addItem()">Valider ma tâche</button>
-  </div>
+    <form [formGroup]="registerationForm">
+      <div class="form">
+        <label for="input">Quelle tâche avez vous à effectuer* ?</label>
+        <input class="input" type="text" id="input" formControlName="input" placeholder="Exemple : Faire les courses"><br>
+      </div>
 
+      <div>
+        <label for="urgent"></label>
+        <input type="radio" id="urgent" formControlName="urgent">&nbsp;&nbsp;La tâche est urgente ⚠️
+      </div>
 
-  <div *ngFor="let item of todoItemArray">
-    {{item}}
-  </div>
+      <div class="flex fix">
+        <button type="submit" class="valider" (click)="onSubmit()">Valider ma tâche</button>
+      </div>
+    </form>
 
+  </form>
 </main>
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TodoService} from 'src/app/services/todo.service';
 
 @Component({
@@ -15,20 +16,47 @@ export class AddTaskPage implements OnInit {
   isAnotherSelected:boolean = false;
 
 
-  todoItem: string;
-  todoItemArray:string[]=[];
+  newTask: string='';
+  registerationForm! : FormGroup;
+  task:any;
 
-  constructor(private todoService: TodoService) {
-    this.todoItem = todoService.todoItem;
-  }
+  constructor(
+    private todoService: TodoService,
+    private fb:FormBuilder
+    ) {
+      this.task = {};
+      // this.newTask = '';
+
+    }
 
 
   ngOnInit() {
+    this.createRegisterationForm();
   }
 
-  addItem() {
-    this.todoService.addItem(this.todoItem);
-    this.todoItem = '';
+
+  onSubmit() {
+    console.log(this.registerationForm);
+    this.task = Object.assign(this.task, this.registerationForm.value);
+    localStorage.setItem('task', JSON.stringify(this.task.input));
+    this.todoService.addTask(this.newTask);
+
+    // this.addTask(this.task.input);
+    this.todoService.addTask(this.task.input);
+    // Reset the input value to an empty string
+    // this.newTask = '';
+    this.registerationForm.controls['input'].setValue('');
+
   }
+
+  createRegisterationForm(){
+    this.registerationForm = this.fb.group({
+      // type:[null, Validators.required],
+      input:[null, Validators.required],
+      urgent : [null, Validators.required]
+    })
+  }
+
+
 
 }

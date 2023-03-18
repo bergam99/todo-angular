@@ -7,10 +7,17 @@ import { TodoService } from 'src/app/services/todo.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  tasks:string[]=[];
+
+  constructor(private todoService:TodoService) { }
+
+  ngOnInit(){
+    this.tasks = this.todoService.getTasks();
+  }
 
 
 
-  constructor(private todoService:TodoService) {}
+
 
 
 }
