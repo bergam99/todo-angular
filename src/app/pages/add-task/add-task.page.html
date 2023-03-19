@@ -39,26 +39,19 @@
     </li>
   </ul>
 
-
-
   <form [formGroup]="registerationForm">
+    <div class="form">
+      <label for="input">Quelle tâche avez vous à effectuer* ?</label>
+      <input class="input" type="text" id="input" [(ngModel)]="newTask" formControlName="input" placeholder="Exemple : Faire les courses"><br>
+    </div>
 
-    <form [formGroup]="registerationForm">
-      <div class="form">
-        <label for="input">Quelle tâche avez vous à effectuer* ?</label>
-        <input class="input" type="text" id="input" formControlName="input" placeholder="Exemple : Faire les courses"><br>
-      </div>
+    <div>
+      <label for="urgent"></label>
+      <input type="radio" id="urgent" formControlName="urgent">&nbsp;&nbsp;La tâche est urgente ⚠️
+    </div>
 
-      <div>
-        <label for="urgent"></label>
-        <input type="radio" id="urgent" formControlName="urgent">&nbsp;&nbsp;La tâche est urgente ⚠️
-      </div>
-
-      <div class="flex fix">
-        <button type="submit" class="valider" (click)="onSubmit()">Valider ma tâche</button>
-      </div>
-    </form>
-
+    <div class="flex fix">
+      <button type="submit" class="valider" (click)="onSubmit()">Valider ma tâche</button>
+    </div>
   </form>
 </main>
-

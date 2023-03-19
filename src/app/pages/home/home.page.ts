@@ -14,10 +14,4 @@ export class HomePage {
   ngOnInit(){
     this.tasks = this.todoService.getTasks();
   }
-
-
-
-
-
-
 }
