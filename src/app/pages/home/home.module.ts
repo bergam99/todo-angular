@@ -16,7 +16,6 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
     HomePageRoutingModule,
   ],
   declarations: [
-    HomePage,
   ]
 })
 export class HomePageModule {}

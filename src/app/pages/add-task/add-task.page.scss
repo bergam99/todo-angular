@@ -38,16 +38,9 @@ ul{
   background-color: var(--color-light-navy);
 }
 
-.input {
-  margin-top: 28px;
-  margin-bottom: 31px;
-  width: 338px;
-  height: 182px;
-  background-color:var(--color-light-navy);
-}
+
 .fix{
   position: relative;
-
 }
 
 .valider{
@@ -67,18 +60,22 @@ ul{
 }
 
 
-input::placeholder {
+textarea::placeholder {
   position: absolute;
   top: 10px;
   left: 10px;
 }
-.input {
+textarea {
   line-height: 20px; /* ajuste la hauteur de ligne */
   border: none;
+  background-color:var(--color-light-navy);
+  margin-top: 28px;
+  margin-bottom: 31px;
+  width: 338px;
+  height: 182px;
 
 }
 
-input:focus,
 textarea:focus {
   outline: none; /* supprime la mise en évidence du focus */
 }
