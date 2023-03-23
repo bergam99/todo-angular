@@ -1,10 +1,10 @@
 <main>
-  <h5>todoLlistttt</h5>
-  <ion-card *ngFor="let task of tasks">
-    <ion-card-header>
-      {{ task }}
-    </ion-card-header>
-  </ion-card>
-
+<ul>
+  <li *ngFor="let task of tasks">
+    <input type="checkbox">
+    {{ task.isUrgent ? '⚠️' : '' }} {{ task.category }}  {{ task.content }}
+  </li>
+</ul>
 
 </main>
+

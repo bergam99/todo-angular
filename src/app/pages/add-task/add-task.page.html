@@ -1,57 +1,29 @@
+
 <main>
-  <p>Sélectionnez votre catégorie* :</p>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
 
-  <ul class="category flex">
-    <li [class.active]="isShoppingSelected">
-      <button>
-        <p [class.active-icon-selected]="isShoppingSelected"><span>🛍️</span></p>
-      </button>
-    </li>
-
-    <li [class.active]="isInscureSelected">
-      <button>
-        <p [class.active-icon-selected]="isInscureSelected"><span>💊</span></p>
-      </button>
-    </li>
-
-    <li [class.active]="isWorkSelected">
-      <button>
-        <p [class.active-icon-selected]="isWorkSelected"><span>💼</span></p>
-      </button>
-    </li>
-
-    <li [class.active]="isBrokedSelected">
-      <button>
-        <p [class.active-icon-selected]="isBrokedSelected"><span>💸</span></p>
-      </button>
-    </li>
-
-    <li [class.active]="isCleanSelected">
-      <button>
-        <p [class.active-icon-selected]="isCleanSelected"><span>🧼</span></p>
-      </button>
-    </li>
-
-    <li [class.active]="isAnotherSelected">
-      <button>
-        <p [class.active-icon-selected]="isAnotherSelected"><span>🤷‍♀️</span></p>
-      </button>
-    </li>
-  </ul>
-
-  <form [formGroup]="registerationForm">
-    <div class="form">
-      <label for="input">Quelle tâche avez vous à effectuer* ?</label>
-      <input class="input" type="text" id="input" [(ngModel)]="newTask" formControlName="input" placeholder="Exemple : Faire les courses"><br>
+    <div>
+      <label for="category">Sélectionnez votre catégorie* :</label>
+      <select  id="category" name="category" [(ngModel)]="task.category" required>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        <!-- class="category flex" -->
+      </select>
     </div>
 
     <div>
-      <label for="urgent"></label>
-      <input type="radio" id="urgent" formControlName="urgent">&nbsp;&nbsp;La tâche est urgente ⚠️
+      <label for="content" >Quelle tâche avez vous à effectuer* ?</label>
+      <textarea placeholder="Exemple : Faire les courses" id="content" name="content" [(ngModel)]="task.content" required></textarea>
     </div>
 
-    <div class="flex fix">
-      <button type="submit" class="valider" (click)="onSubmit()">Valider ma tâche</button>
+    <div>
+      <input type="checkbox" id="isUrgent" name="isUrgent" [(ngModel)]="task.isUrgent">
+      <label for="isUrgent">&nbsp;&nbsp;La tâche est urgente ⚠️</label>
     </div>
+
+  <div class="flex fix">
+    <button type="submit" class="valider" [disabled]="!myForm.valid">Add Task</button>
+  </div>
+
   </form>
 </main>
+
