@@ -21,8 +21,7 @@
     </div>
 
   <div class="flex fix">
-    <button type="submit" class="valider" [disabled]="!myForm.valid">Add Task</button>
-  </div>
+    <button class="valider" type="submit" [style.opacity]="myForm.valid ? 1 : 0.5" [disabled]="!myForm.valid">Valider ma tâche</button>  </div>
 
   </form>
 </main>

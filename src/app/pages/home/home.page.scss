@@ -1,3 +1,11 @@
 main{
 margin: 107px 26px 100px 26px;
 }
+.container{
+  height: min(200px, 100%); /* set a fixed height for the container */
+  overflow-y: auto;
+  // --width: 200px;
+}
+.custom-side-menu {
+  --width: 200px;
+}
