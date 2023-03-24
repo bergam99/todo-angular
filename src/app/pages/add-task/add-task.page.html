@@ -6,7 +6,6 @@
       <label for="category">Sélectionnez votre catégorie* :</label>
       <select  id="category" name="category" [(ngModel)]="task.category" required>
         <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-        <!-- class="category flex" -->
       </select>
     </div>
 
@@ -20,9 +19,16 @@
       <label for="isUrgent">&nbsp;&nbsp;La tâche est urgente ⚠️</label>
     </div>
 
-  <div class="flex fix">
-    <button class="valider" type="submit" [style.opacity]="myForm.valid ? 1 : 0.5" [disabled]="!myForm.valid">Valider ma tâche</button>  </div>
+    <!-- Not Edit mode -->
+    <div class="flex fix" *ngIf="!isEditMode">
+      <button class="valider" type="submit" [style.opacity]="myForm.valid ? 1 : 0.5" [disabled]="!myForm.valid">
+        Valider ma tâche</button>
+    </div>
 
+    <!-- Edit mode -->
+    <div class="flex fix" *ngIf="isEditMode">
+      <button (click)="onSave()" class="valider" type="submit" [style.opacity]="myForm.valid ? 1 : 0.5" [disabled]="!myForm.valid">Modifier ma tâche</button>
+    </div>
   </form>
 </main>
 
