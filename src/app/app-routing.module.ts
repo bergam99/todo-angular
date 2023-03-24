@@ -15,12 +15,16 @@ const routes: Routes = [
     component: AddTaskPage
   },
   {
+    path: 'edit-task/:id',
+    component: AddTaskPage
+  },
+  {
     path: 'history',
     component:HistoryPage
   },
   // {
   //   path: '**',
-  //   redirectTo: 'home',
+  //   redirectTo: '',
   // },
 
 ];
