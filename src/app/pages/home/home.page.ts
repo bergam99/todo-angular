@@ -9,14 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  tasks:ITodo[]=[];
-  category:string='';
+  tasks: ITodo[] = [];
+  category: string = '';
 
-  constructor(private todoService:TodoService, private router: Router) { }
+  constructor(private todoService: TodoService, private router: Router) {
+    this.tasks = this.todoService.getTasks();
+  }
 
-
-// ngOnInit récupère la liste des tâches en appelant la méthode getTasks() du service.  Ensuite, la liste de tâches est assignée à la propriété tasks du composant.
-  ngOnInit(){
+  // ngOnInit récupère la liste des tâches en appelant la méthode getTasks() du service.  Ensuite, la liste de tâches est assignée à la propriété tasks du composant.
+  ngOnInit() {
     this.tasks = this.todoService.getTasks();
 
     // this.tasks = this.todoService.getTasks();
@@ -24,8 +25,27 @@ export class HomePage {
   }
   editTask(id: number): void {
     this.router.navigate(['/edit-task', id]);
-
   }
 
+  onCheckboxClick(event: Event, task: ITodo) {
+    // Empêcher le lien de la case à cocher de rediriger la page
+    event.stopPropagation();
+
+    task.isComplete = !task.isComplete;
+    if (task.isComplete) {
+      task.doneDate = new Date(); // Initialiser la propriété doneDate avec la date actuelle
+      const index = this.tasks.indexOf(task);
+      if (index !== -1) {
+        // Supprimer la tâche du tableau des tâches non terminées
+        this.tasks.splice(index, 1);
+
+        // Ajouter la tâche au tableau des tâches terminées
+        this.todoService.doneTasks.push(task);
+
+        // Enregistrer les modifications dans le stockage local
+        this.todoService.saveTasks();
+      }
+    }
+  }
 
 }
