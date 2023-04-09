@@ -12,7 +12,7 @@
     <ul>
       <ng-container *ngFor="let task of tasks">
         <li *ngIf="!task.isComplete" (click)="editTask(task.id)">
-          <input type="checkbox" [(ngModel)]="task.isComplete" (click)="onCheckboxClick($event, task)">
+          <input class="checkbox-round" type="checkbox" [(ngModel)]="task.isComplete" (click)="onCheckboxClick($event, task)" />&nbsp; &nbsp;
           {{ task.isUrgent ? '⚠️' : '' }} {{ task.category }} {{ task.content }}
         </li>
       </ng-container>
