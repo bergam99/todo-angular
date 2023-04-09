@@ -1,12 +1,14 @@
-
 <main>
-<!-- 0 -->
-  <div *ngIf="tasks.length === 0">
-    <button (click)="showAddTaskForm()">Add a Task</button>
-  </div>
+  <!-- 0 -->
+  <section *ngIf="tasks.length === 0">
+    <div class="flex">
+      <div class="margin-button">Aucune tâche pour le moment 🙌</div>
+        <button class="button-aucune-tache" (click)="showAddTaskForm()">Créer une tâche</button>
+    </div>
+  </section>
 
-<!-- 1+ -->
-  <div class="container" *ngIf="tasks.length > 0">
+  <!-- 1+ -->
+  <section class="container" *ngIf="tasks.length > 0">
     <ul>
       <ng-container *ngFor="let task of tasks">
         <li *ngIf="!task.isComplete" (click)="editTask(task.id)">
@@ -15,5 +17,5 @@
         </li>
       </ng-container>
     </ul>
-  </div>
+  </section>
 </main>
