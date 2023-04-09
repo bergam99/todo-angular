@@ -38,14 +38,16 @@ export class HomePage {
       if (index !== -1) {
         // Supprimer la tâche du tableau des tâches non terminées
         this.tasks.splice(index, 1);
-
         // Ajouter la tâche au tableau des tâches terminées
         this.todoService.doneTasks.push(task);
-
         // Enregistrer les modifications dans le stockage local
         this.todoService.saveTasks();
       }
     }
   }
-
+  showAddTaskForm() {
+    if (this.tasks.length === 0) {
+      this.router.navigate(['/add-task']);
+    }
+  }
 }
