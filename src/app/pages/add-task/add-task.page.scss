@@ -1,9 +1,9 @@
-main{
+main {
   padding: 107px 26px 100px 26px;
 }
 
-.active-icon-selected{
-  color:var(--color-yellow);
+.active-icon-selected {
+  color: var(--color-yellow);
 }
 
 
@@ -21,16 +21,16 @@ main{
   justify-content: center;
 }
 
-ul{
+ul {
   display: inline;
-  gap:10px;
+  gap: 10px;
   margin-top: 28px;
   margin-bottom: 28px;
 }
 
 
 .category li p span {
-  width:16px;
+  width: 16px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,23 +39,24 @@ ul{
 }
 
 
-.fix{
+.fix {
   position: relative;
 }
 
-.valider{
-  background-color:var(--color-blue);
+.valider {
+  background-color: var(--color-blue);
   height: 48px;
   width: 248px;
-  border-radius:50px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
-  align-items:center;
-  margin:0 0 125px 0;
+  align-items: center;
+  margin: 0 0 125px 0;
 
   position: fixed;
   z-index: 9999;
-  bottom: 25px; /* distance from bottom */
+  bottom: 25px;
+  /* distance from bottom */
 
 }
 
@@ -65,10 +66,12 @@ textarea::placeholder {
   top: 10px;
   left: 10px;
 }
+
 textarea {
-  line-height: 20px; /* ajuste la hauteur de ligne */
+  line-height: 20px;
+  /* ajuste la hauteur de ligne */
   border: none;
-  background-color:var(--color-light-navy);
+  background-color: var(--color-light-navy);
   margin-top: 28px;
   margin-bottom: 31px;
   width: 338px;
@@ -77,11 +80,57 @@ textarea {
 }
 
 textarea:focus {
-  outline: none; /* supprime la mise en évidence du focus */
+  outline: none;
+  /* supprime la mise en évidence du focus */
 }
 
-// .active-icon-selected{
-//   background-color:var(---color-yellow);
-// }
+// checkbox
+.checkbox {
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: var(--color-light-navy);
+  appearance: none;
+  -webkit-appearance: none;
+  // outline: none;
+  cursor: pointer;
+}
 
-//   background-color:var(--color-lignt-navy);
+input[type="checkbox"] {
+
+  position: relative;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50x;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+
+  &::before {
+
+
+    position: absolute;
+    content: '';
+    display: block;
+    top: 3px;
+    left: 7px;
+    width: 8px;
+    height: 12px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  &:checked {
+    color: white;
+    border-color: var(--color-pink);
+    background: var(--color-pink);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
