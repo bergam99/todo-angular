@@ -33,3 +33,54 @@ main {
   background-color: var(--color-blue);
   border-radius: 50px
 }
+
+
+// checkbox
+.checkbox-round {
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid white;
+  appearance: none;
+  -webkit-appearance: none;
+  // outline: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: gray;
+}
+/* 체크박스 숨기기 */
+
+// input[type="checkbox"] {
+//   position: absolute;
+//   opacity: 0;
+//   cursor: pointer;
+// }
+
+// /* 체크박스 모양 설정 */
+// .checkmark {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 25px;
+//   width: 25px;
+//   background-color: #fff;
+//   border: 2px solid #ccc;
+//   border-radius: 5px;
+// }
+
+// /* 체크된 상태일 때의 모양 설정 */
+// input[type="checkbox"]:checked + .checkmark:after {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   top: 5px;
+//   left: 9px;
+//   width: 5px;
+//   height: 10px;
+//   border: solid #000;
+//   border-width: 0 3px 3px 0;
+//   transform: rotate(45deg);
+// }
