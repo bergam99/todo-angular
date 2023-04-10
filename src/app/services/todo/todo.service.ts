@@ -14,14 +14,13 @@ export interface ITodo {
   category: CategoryType | null;
   isUrgent: boolean;
   doneDate: Date | null;
-  isComplete:boolean;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
-  private readonly doneTasksKey = 'doneTasks';
+  // private readonly doneTasksKey = 'doneTasks';
 
   public tasks: ITodo[] = [];
   public doneTasks: ITodo[] = []; // Nouveau tableau pour stocker les tâches terminées
@@ -33,9 +32,14 @@ export class TodoService {
     }
   }
 
+  // addTask(task: ITodo): void {
+  //   this.tasks.push(task);
+  //   localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  // }
   addTask(task: ITodo): void {
     this.tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    this.tasks = this.getTasks(); // update this.tasks with the newly added task
   }
 
   getTasks(): ITodo[] {
@@ -43,9 +47,8 @@ export class TodoService {
     if (tasksString) {
       this.tasks = JSON.parse(tasksString);
     }
-    return this.tasks;
+    return this.tasks.filter((task) => task.doneDate === null);
   }
-
   getTaskById(id: number): ITodo | undefined {
     return this.tasks.find((task) => task.id === id);
   }
@@ -77,17 +80,13 @@ export class TodoService {
   //   }
   // }
 
-  getDoneTasks(): ITodo[] {
-    const doneTasksString = localStorage.getItem(this.doneTasksKey);
-    if (!doneTasksString) {
-      return [];
-    }
-    return JSON.parse(doneTasksString);
-  }
+  // getDoneTasks(): ITodo[] {
+  //   const doneTasksString = localStorage.getItem(this.doneTasksKey);
+  //   if (!doneTasksString) {
+  //     return [];
+  //   }
+  //   return JSON.parse(doneTasksString);
+  // }
 
-  addDoneTask(task: ITodo): void {
-    const doneTasks = this.getDoneTasks();
-    doneTasks.push(task);
-    localStorage.setItem(this.doneTasksKey, JSON.stringify(doneTasks));
-  }
+
 }
