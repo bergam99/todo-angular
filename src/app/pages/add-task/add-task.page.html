@@ -1,29 +1,34 @@
 <main>
   <form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
     <!-- CATEGORY -->
-    <div>
-      <input class="radio" type="radio" id="shopping" name="category" [(ngModel)]="task.category" value="🛍️"/>
-      <label for="shopping">&nbsp;&nbsp;🛍️</label>
-    </div>
-    <div>
-      <input class="radio" type="radio" id="health" name="category" [(ngModel)]="task.category" value="💊" />
-      <label for="health">&nbsp;&nbsp;💊</label>
-    </div>
-    <div>
-      <input class="radio" type="radio" id="work" name="category" [(ngModel)]="task.category" value="💼" />
-      <label for="work">&nbsp;&nbsp;💼</label>
-    </div>
-    <div>
-      <input class="radio" type="radio" id="bills" name="category" [(ngModel)]="task.category" value="💸" />
-      <label for="bills">&nbsp;&nbsp;💸</label>
-    </div>
-    <div>
-      <input class="radio" type="radio" id="cleaning" name="category" [(ngModel)]="task.category" value="🧼" />
-      <label for="cleaning">&nbsp;&nbsp;🧼</label>
-    </div>
-    <div>
-      <input class="radio" type="radio" id="other" name="category" [(ngModel)]="task.category" value="🤷‍♀️" />
-      <label for="other">&nbsp;&nbsp;🤷‍♀️ </label>
+
+    <p class="category-label">Sélectionnez votre catégorie* :</p>
+
+    <div class="category-list">
+      <div class="circle">
+        <input class="radio" type="radio" id="shopping" name="category" [(ngModel)]="task.category" value="🛍️" required/>
+        <label class="circle-label " for="shopping">&nbsp;&nbsp;<span class="icon"> 🛍️</span></label>
+      </div>
+      <div class="circle">
+        <input class="radio" type="radio" id="health" name="category" [(ngModel)]="task.category" value="💊" required/>
+        <label class="circle-label " for="health">&nbsp;&nbsp;<span class="icon">💊</span></label>
+      </div>
+      <div class="circle">
+        <input class="radio" type="radio" id="work" name="category" [(ngModel)]="task.category" value="💼" required/>
+        <label class="circle-label " for="work">&nbsp;&nbsp;<span class="icon">💼</span></label>
+      </div>
+      <div class="circle">
+        <input class="radio" type="radio" id="bills" name="category" [(ngModel)]="task.category" value="💸" required/>
+        <label class="circle-label " for="bills">&nbsp;&nbsp;<span class="icon">💸</span></label>
+      </div>
+      <div class="circle">
+        <input class="radio" type="radio" id="cleaning" name="category" [(ngModel)]="task.category" value="🧼" required/>
+        <label class="circle-label " for="cleaning">&nbsp;&nbsp;<span class="icon">🧼</span></label>
+      </div>
+      <div class="circle">
+        <input class="radio" type="radio" id="other" name="category" [(ngModel)]="task.category" value="🤷‍♀️" required/>
+        <label class="circle-label " for="other">&nbsp;&nbsp;<span class="icon">🤷‍♀️</span> </label>
+      </div>
     </div>
 
     <!-- TEXTAREA -->

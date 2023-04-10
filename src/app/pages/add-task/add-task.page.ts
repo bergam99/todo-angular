@@ -46,15 +46,7 @@ export class AddTaskPage implements OnInit {
     this.router.navigate(['/']);
   }
 
-  // onSubmit(): void {
-  //   // Generate a unique ID for the task
-  //   const taskId = new Date().getTime();
 
-  //   // Set the ID and add the task to the service
-  //   this.task.id = taskId;
-  //   this.todoService.addTask(this.task);
-  //   this.myForm.resetForm();
-  // }
   onSubmit(): void {
     // Generate a unique ID for the task
     const taskId = new Date().getTime();

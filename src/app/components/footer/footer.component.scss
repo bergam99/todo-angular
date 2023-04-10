@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items:center;
-  gap: 25px;
+  gap: 10vw;
   border-top: 1px white solid;
 
   position: fixed;
@@ -11,6 +11,7 @@
   width: 100%;
   box-sizing: border-box;
 }
+
 
 
 // "relative" to create a positioning context for the img tag
@@ -40,15 +41,53 @@
 }
 
 .active-icon-add{
-  background-color:var(--color-yellow);
+  background-color:var(--color-yellow)!important;
 
 }
 
 .active-icon-history{
-  background-color:var(--color-pink);
+  background-color:var(--color-pink)!important;
 }
 
 .default-icon {
   background-color:var(---color-light-navy);
 }
 
+// bg
+.circle {
+  position: relative;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-light-navy);
+}
+
+
+.circle-label {
+  // default
+  background-color: var(--color-light-navy);
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  margin-top: 25px;
+  transform: translate(-50%, -50%);
+  width: 66px;
+  height: 66px;
+
+  text-align: center;
+  line-height: 50px;
+  transition: all;
+
+}
+
+.img-bg{
+  background-color: var(--color-light-navy);
+
+}
+
+
+.circle button:checked + .circle-label {
+  background-color: var(--color-yellow);
+  transition: all;
+}
