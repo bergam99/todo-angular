@@ -1,25 +1,71 @@
-
 <main>
   <form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-
-    <div>
+    <!-- <div>
       <label for="category">Sélectionnez votre catégorie* :</label>
-      <select  id="category" name="category" [(ngModel)]="task.category" required>
-        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-      </select>
-    </div>
+      <div class="category-list">
+        <div (click)="selectCategory('🛍️')">
+          <span class="category-icon">🛍️</span>
+        </div>
+        <div (click)="selectCategory('💊')">
+          <span class="category-icon">💊</span>
+        </div>
+        <div (click)="selectCategory('💼')">
+          <span class="category-icon">💼</span>
+        </div>
+        <div (click)="selectCategory('💸')">
+          <span class="category-icon">💸</span>
+        </div>
+        <div (click)="selectCategory('🧼')">
+          <span class="category-icon">🧼</span>
+        </div>
+        <div (click)="selectCategory('🤷‍♀️')">
+          <span class="category-icon">🤷‍♀️</span>
+        </div>
+      </div>
+      <input type="hidden" name="category" [value]="task.category" required>
+    </div> -->
 
+    <!-- CATEGORY -->
     <div>
-      <label for="content" >Quelle tâche avez vous à effectuer* ?</label>
-      <textarea placeholder="Exemple : Faire les courses" id="content" name="content" [(ngModel)]="task.content" required></textarea>
+      <input class="radio" type="radio" id="shopping" name="category" [(ngModel)]="task.category" value="🛍️"/>
+      <label for="shopping">&nbsp;&nbsp;🛍️</label>
+    </div>
+    <div>
+      <input class="radio" type="radio" id="health" name="category" [(ngModel)]="task.category" value="💊" />
+      <label for="health">&nbsp;&nbsp;💊</label>
+    </div>
+    <div>
+      <input class="radio" type="radio" id="work" name="category" [(ngModel)]="task.category" value="💼" />
+      <label for="work">&nbsp;&nbsp;💼</label>
+    </div>
+    <div>
+      <input class="radio" type="radio" id="bills" name="category" [(ngModel)]="task.category" value="💸" />
+      <label for="bills">&nbsp;&nbsp;💸</label>
+    </div>
+    <div>
+      <input class="radio" type="radio" id="cleaning" name="category" [(ngModel)]="task.category" value="🧼" />
+      <label for="cleaning">&nbsp;&nbsp;🧼</label>
+    </div>
+    <div>
+      <input class="radio" type="radio" id="other" name="category" [(ngModel)]="task.category" value="🤷‍♀️" />
+      <label for="other">&nbsp;&nbsp;🤷‍♀️ </label>
     </div>
 
+    <!-- TEXTAREA -->
+    <div>
+      <label for="content">Quelle tâche avez vous à effectuer* ?</label>
+      <textarea placeholder="Exemple : Faire les courses" id="content" name="content" [(ngModel)]="task.content"
+        required></textarea>
+    </div>
+
+    <!-- URGENT -->
     <div>
       <input class="checkbox" type="checkbox" id="isUrgent" name="isUrgent" [(ngModel)]="task.isUrgent">
       <label for="isUrgent">&nbsp;&nbsp;La tâche est urgente ⚠️</label>
 
     </div>
 
+    <!-- SUBMIT -->
     <!-- Not Edit mode -->
     <div class="flex fix" *ngIf="!isEditMode">
       <button class="valider" type="submit" [style.opacity]="myForm.valid ? 1 : 0.5" [disabled]="!myForm.valid">
@@ -28,8 +74,8 @@
 
     <!-- Edit mode -->
     <div class="flex fix" *ngIf="isEditMode">
-      <button (click)="onSave()" class="valider" type="submit" [style.opacity]="myForm.valid ? 1 : 0.5" [disabled]="!myForm.valid">Modifier ma tâche</button>
+      <button (click)="onSave()" class="valider" type="submit" [style.opacity]="myForm.valid ? 1 : 0.5"
+        [disabled]="!myForm.valid">Modifier ma tâche</button>
     </div>
   </form>
 </main>
-
