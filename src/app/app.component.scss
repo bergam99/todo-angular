@@ -1,3 +1,18 @@
-main{
-  margin: 107px 26px 100px 26px;
+
+.scroll-container::-webkit-scrollbar {
+  width: 4px;
+  // height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-yellow);
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-yellow);
+}
+.scroll-container {
+  height: calc(100vh - 100px);
+  overflow-y: auto;
 }
