@@ -52,6 +52,15 @@ export class AddTaskPage {
   }
 
   onSubmit(): void {
+        // Generate a unique ID for the task
+        const taskId = new Date().getTime();
+
+        // Set the ID and add the task to the service
+        this.task.id = taskId;
+        this.todoService.addTask(this.task);
+        this.myForm.resetForm();
+
+
     if (this.task.category) {
       if (this.task.content.trim().length > 0) {
         if (this.todoService.getTaskById(this.task.id)) {
