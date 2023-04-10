@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './add-task.page.html',
   styleUrls: ['./add-task.page.scss'],
 })
-export class AddTaskPage {
+export class AddTaskPage implements OnInit {
   @ViewChild('myForm') myForm: any;
   categories = ['🛍️', '💊', '💼', '💸', '🧼', '🤷‍♀️'];
   task: ITodo = {
@@ -23,10 +23,6 @@ export class AddTaskPage {
     isComplete:false,
   };
   isEditMode: boolean = false;
-
-  // css
-
-
 
 
   constructor(
@@ -52,26 +48,13 @@ export class AddTaskPage {
   }
 
   onSubmit(): void {
-        // Generate a unique ID for the task
-        const taskId = new Date().getTime();
+    // Generate a unique ID for the task
+    const taskId = new Date().getTime();
 
-        // Set the ID and add the task to the service
-        this.task.id = taskId;
-        this.todoService.addTask(this.task);
-        this.myForm.resetForm();
-
-
-    if (this.task.category) {
-      if (this.task.content.trim().length > 0) {
-        if (this.todoService.getTaskById(this.task.id)) {
-          this.todoService.updateTask(this.task);
-        } else {
-          this.task.id = this.todoService.getNextId();
-          this.todoService.addTask(this.task);
-        }
-        this.router.navigate(['/home']);
-      }
-    }
+    // Set the ID and add the task to the service
+    this.task.id = taskId;
+    this.todoService.addTask(this.task);
+    this.myForm.resetForm();
   }
 
   submitForm(): void {
@@ -84,10 +67,5 @@ export class AddTaskPage {
       }
       this.router.navigate(['/home']);
     }
-  }
-
-  selectCategory(category: CategoryType) {
-    this.task.category = category;
-    localStorage.setItem('tasks', JSON.stringify(this.todoService.getTasks()));
   }
 }
