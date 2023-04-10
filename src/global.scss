@@ -12,6 +12,12 @@
   color:white;
   box-sizing: border-box;
 }
+
+textarea {
+  // outline: none;
+  resize: none;
+  // box-sizing: border-box;
+}
 button{
   all:unset;
 }
