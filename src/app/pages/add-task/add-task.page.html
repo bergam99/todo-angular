@@ -1,30 +1,5 @@
 <main>
   <form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-    <!-- <div>
-      <label for="category">Sélectionnez votre catégorie* :</label>
-      <div class="category-list">
-        <div (click)="selectCategory('🛍️')">
-          <span class="category-icon">🛍️</span>
-        </div>
-        <div (click)="selectCategory('💊')">
-          <span class="category-icon">💊</span>
-        </div>
-        <div (click)="selectCategory('💼')">
-          <span class="category-icon">💼</span>
-        </div>
-        <div (click)="selectCategory('💸')">
-          <span class="category-icon">💸</span>
-        </div>
-        <div (click)="selectCategory('🧼')">
-          <span class="category-icon">🧼</span>
-        </div>
-        <div (click)="selectCategory('🤷‍♀️')">
-          <span class="category-icon">🤷‍♀️</span>
-        </div>
-      </div>
-      <input type="hidden" name="category" [value]="task.category" required>
-    </div> -->
-
     <!-- CATEGORY -->
     <div>
       <input class="radio" type="radio" id="shopping" name="category" [(ngModel)]="task.category" value="🛍️"/>

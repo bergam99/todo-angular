@@ -24,7 +24,6 @@ export class AddTaskPage implements OnInit {
   };
   isEditMode: boolean = false;
 
-
   constructor(
     private todoService: TodoService,
     private fb: FormBuilder,
@@ -47,6 +46,15 @@ export class AddTaskPage implements OnInit {
     this.router.navigate(['/']);
   }
 
+  // onSubmit(): void {
+  //   // Generate a unique ID for the task
+  //   const taskId = new Date().getTime();
+
+  //   // Set the ID and add the task to the service
+  //   this.task.id = taskId;
+  //   this.todoService.addTask(this.task);
+  //   this.myForm.resetForm();
+  // }
   onSubmit(): void {
     // Generate a unique ID for the task
     const taskId = new Date().getTime();
@@ -54,9 +62,20 @@ export class AddTaskPage implements OnInit {
     // Set the ID and add the task to the service
     this.task.id = taskId;
     this.todoService.addTask(this.task);
+
+    // Reset the task object
+    this.task = {
+      id: 0,
+      content: '',
+      category: null,
+      isUrgent: false,
+      doneDate: null,
+      isComplete: false
+    };
+
+    // Reset the form
     this.myForm.resetForm();
   }
-
   submitForm(): void {
     if (this.myForm.valid) {
       if (this.isEditMode) {
@@ -68,4 +87,5 @@ export class AddTaskPage implements OnInit {
       this.router.navigate(['/home']);
     }
   }
+
 }
