@@ -31,8 +31,7 @@ export class HomePage {
     // Empêcher le lien de la case à cocher de rediriger la page
     event.stopPropagation();
 
-    task.isComplete = !task.isComplete;
-    if (task.isComplete) {
+    if (task.doneDate) {
       task.doneDate = new Date(); // Initialiser la propriété doneDate avec la date actuelle
       const index = this.tasks.indexOf(task);
       if (index !== -1) {

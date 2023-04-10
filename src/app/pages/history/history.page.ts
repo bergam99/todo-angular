@@ -12,7 +12,7 @@ export class HistoryPage implements OnInit {
   constructor(private todoService: TodoService) {}
 
   ngOnInit() {
-    this.doneTasks = this.todoService.getDoneTasks();
+    // this.doneTasks = this.todoService.getDoneTasks();
     // const storedTasks = localStorage.getItem('doneTasks');
     // if (storedTasks) {
     //   this.doneTasks = JSON.parse(storedTasks);

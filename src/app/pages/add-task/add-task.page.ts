@@ -5,6 +5,7 @@ import { ITodo } from 'src/app/services/todo/todo.service';
 import { CategoryType } from '../../services/todo/todo.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-task',
@@ -12,15 +13,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-task.page.scss'],
 })
 export class AddTaskPage implements OnInit {
+  currentDate: string|null=null;
+
   @ViewChild('myForm') myForm: any;
-  categories = ['🛍️', '💊', '💼', '💸', '🧼', '🤷‍♀️'];
   task: ITodo = {
     id: 0,
     content: '',
     category: null,
     isUrgent: false,
     doneDate: null,
-    isComplete:false,
   };
   isEditMode: boolean = false;
 
@@ -53,7 +54,9 @@ export class AddTaskPage implements OnInit {
 
     // Set the ID and add the task to the service
     this.task.id = taskId;
+    // this.task.doneDate = new Date();
     this.todoService.addTask(this.task);
+
 
     // Reset the task object
     this.task = {
@@ -62,12 +65,12 @@ export class AddTaskPage implements OnInit {
       category: null,
       isUrgent: false,
       doneDate: null,
-      isComplete: false
     };
 
     // Reset the form
     this.myForm.resetForm();
   }
+
   submitForm(): void {
     if (this.myForm.valid) {
       if (this.isEditMode) {
