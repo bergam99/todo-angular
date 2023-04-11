@@ -22,6 +22,8 @@ export class AddTaskPage implements OnInit {
     category: null,
     isUrgent: false,
     doneDate: null,
+    isComplete:false,
+
   };
   isEditMode: boolean = false;
 
@@ -65,6 +67,7 @@ export class AddTaskPage implements OnInit {
       category: null,
       isUrgent: false,
       doneDate: null,
+      isComplete:false,
     };
 
     // Reset the form

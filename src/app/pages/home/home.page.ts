@@ -31,14 +31,17 @@ export class HomePage {
     // Empêcher le lien de la case à cocher de rediriger la page
     event.stopPropagation();
 
-    if (task.doneDate) {
+    task.isComplete = !task.isComplete;
+    if (task.isComplete) {
       task.doneDate = new Date(); // Initialiser la propriété doneDate avec la date actuelle
       const index = this.tasks.indexOf(task);
       if (index !== -1) {
         // Supprimer la tâche du tableau des tâches non terminées
         this.tasks.splice(index, 1);
-        // Ajouter la tâche au tableau des tâches terminées
+
+        // Ajouter la tâche au tableau ades tâches terminées
         this.todoService.doneTasks.push(task);
+
         // Enregistrer les modifications dans le stockage local
         this.todoService.saveTasks();
       }
@@ -47,6 +50,8 @@ export class HomePage {
   showAddTaskForm() {
     if (this.tasks.length === 0) {
       this.router.navigate(['/add-task']);
-    }
-  }
+    }}
+
+
 }
+
