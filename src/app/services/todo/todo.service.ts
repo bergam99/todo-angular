@@ -77,6 +77,27 @@ export class TodoService {
       : 1;
   }
 
+  // moveTaskToDone(task: ITodo) {
+  //   const index = this.tasks.indexOf(task);
+  //   if (index !== -1) {
+  //     // Supprimer la tâche du tableau des tâches non terminées
+  //     this.tasks.splice(index, 1);
+
+  //     // Ajouter la tâche au tableau ades tâches terminées
+  //     this.doneTasks.push(task);
+  //   }
+  // }
+
+  // moveTaskToNotDone(task: ITodo) {
+  //   const index = this.doneTasks.indexOf(task);
+  //   if (index !== -1) {
+  //     // Supprimer la tâche du tableau des tâches terminées
+  //     this.doneTasks.splice(index, 1);
+
+  //     // Ajouter la tâche au tableau des tâches non terminées
+  //     this.tasks.push(task);
+  //   }
+  // }
     // addTask(task: ITodo): void {
   //   this.tasks.push(task);
   //   localStorage.setItem('tasks', JSON.stringify(this.tasks));
