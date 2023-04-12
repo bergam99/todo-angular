@@ -1,3 +1,62 @@
 main{
   padding: 107px 26px 100px 26px;
 }
+
+
+.container {
+  height: min(200px, 100%);
+  /* set a fixed height for the container */
+  overflow-y: auto;
+  // --width: 200px;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.custom-side-menu {
+  --width: 200px;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+  text-align: center;
+  text-align: justify-content;
+}
+
+.margin-button{
+  margin-bottom: 1em;
+}
+.button-aucune-tache {
+  height: 48px;
+  width: 248px;
+  background-color: var(--color-blue);
+  border-radius: 50px
+}
+
+
+// checkbox
+.checkbox-round {
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid white;
+  appearance: none;
+  -webkit-appearance: none;
+  // outline: none;
+  cursor: pointer;
+}
+
+// .checkbox-round:checked {
+//   background-color: gray;
+// }
+.space{
+  margin-bottom: 1.5vh;
+
+}
