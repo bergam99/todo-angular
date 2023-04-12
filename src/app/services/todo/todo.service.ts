@@ -33,10 +33,7 @@ export class TodoService {
     }
   }
 
-  // addTask(task: ITodo): void {
-  //   this.tasks.push(task);
-  //   localStorage.setItem('tasks', JSON.stringify(this.tasks));
-  // }
+
   addTask(task: ITodo): void {
     this.tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
@@ -50,6 +47,16 @@ export class TodoService {
     }
     return this.tasks.filter((task) => task.doneDate === null);
   }
+
+  getDoneTasks(): ITodo[] {
+    const tasksString = localStorage.getItem('tasks');
+    if (tasksString) {
+      this.tasks = JSON.parse(tasksString);
+    }
+    return this.tasks.filter((task) => task.isComplete == true);
+  }
+
+
   getTaskById(id: number): ITodo | undefined {
     return this.tasks.find((task) => task.id === id);
   }
@@ -70,20 +77,35 @@ export class TodoService {
       : 1;
   }
 
+    // addTask(task: ITodo): void {
+  //   this.tasks.push(task);
+  //   localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  // }
+    // getDoneTasks(): ITodo[] {
+  //   const tasksString = localStorage.getItem('tasks');
+  //   if (tasksString) {
+  //     this.tasks = JSON.parse(tasksString);
+  //   }
+  //   this.doneTasks = this.tasks.filter((task) => task.doneDate !== null || task.isComplete);
+  //   return this.doneTasks;
+  // }
 
-  getDoneTasks(): ITodo[] {
-    const doneTasksString = localStorage.getItem(this.doneTasksKey);
-    if (!doneTasksString) {
-      return [];
-    }
-    return JSON.parse(doneTasksString);
-  }
 
-  addDoneTask(task: ITodo): void {
-    const doneTasks = this.getDoneTasks();
-    doneTasks.push(task);
-    localStorage.setItem(this.doneTasksKey, JSON.stringify(doneTasks));
-  }
+  // addDoneTask(task: ITodo): void {
+  //   const doneTasks = this.getDoneTasks();
+  //   doneTasks.push(task);
+  //   localStorage.setItem(this.doneTasksKey, JSON.stringify(doneTasks));
+  // }
+
+
+  // getDoneTasks(): ITodo[] {
+  //   const doneTasksString = localStorage.getItem(this.doneTasksKey);
+  //   if (!doneTasksString) {
+  //     return [];
+  //   }
+  //   return JSON.parse(doneTasksString);
+  // }
+
 
 
 }
