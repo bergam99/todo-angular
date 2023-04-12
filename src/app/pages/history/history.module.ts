@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -6,15 +6,19 @@ import { IonicModule } from '@ionic/angular';
 
 import { HistoryPageRoutingModule } from './history-routing.module';
 
-import { HistoryPage } from './history.page';
+// import { HistoryPage } from './history.page';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HistoryPageRoutingModule
+    // HistoryPageRoutingModule,
+    BrowserModule
   ],
-  declarations: [HistoryPage]
+  // declarations: [HistoryPage],
+  schemas: [NO_ERRORS_SCHEMA]
+
 })
 export class HistoryPageModule {}

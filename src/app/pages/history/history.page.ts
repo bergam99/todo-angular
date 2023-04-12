@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TodoService, ITodo } from 'src/app/services/todo/todo.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-history',
@@ -8,22 +10,22 @@ import { TodoService, ITodo } from 'src/app/services/todo/todo.service';
 })
 export class HistoryPage implements OnInit {
   doneTasks: ITodo[] = [];
+  tasks: ITodo[] = [];
 
-  constructor(private todoService: TodoService) {}
 
-  ngOnInit() {
+  constructor(private todoService: TodoService,  private router: Router) {
     this.doneTasks = this.todoService.getDoneTasks();
-    // const storedTasks = localStorage.getItem('doneTasks');
-    // if (storedTasks) {
-    //   this.doneTasks = JSON.parse(storedTasks);
-    }
+    console.log(this.doneTasks);
   }
-  // saveDoneTask(task: ITodo) {
-  //   this.doneTasks.push(task);
-  //   localStorage.setItem('doneTasks', JSON.stringify(this.doneTasks));
-  // }
-  // getDoneTasks(): ITodo[] {
-  //   return this.todoService.getDoneTasks();
 
-  // }
-// }
+  ngOnInit(): void {
+    this.doneTasks = this.todoService.getDoneTasks();
+    console.log(this.doneTasks);
+
+  }
+
+  // showAddTaskForm() {
+  //   if (this.tasks.length === 0) {
+  //     this.router.navigate(['/add-task']);
+  //   }}
+}

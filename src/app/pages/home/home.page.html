@@ -1,5 +1,5 @@
-<main>
-  <!-- 0 -->
+<main [ngClass]="{'no-scroll': tasks.length === 0}">
+    <!-- 0 -->
   <section *ngIf="tasks.length === 0">
     <div class="flex">
       <div class="margin-button">Aucune tâche pour le moment 🙌</div>
