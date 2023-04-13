@@ -13,15 +13,20 @@ export class HistoryPage implements OnInit {
   tasks: ITodo[] = [];
 
 
-  constructor(private todoService: TodoService,  private router: Router) {
+  constructor(private todoService: TodoService, private router: Router) {
     this.doneTasks = this.todoService.getDoneTasks();
-    console.log(this.doneTasks);
-  }
+
+    // this.doneTasks = this.todoService.getDoneTasks().sort((a, b) => {
+    //   // Sort tasks in reverse chronological order based on doneDate
+    //   return new Date(b.doneDate).getTime() - new Date(a.doneDate).getTime();
+
+  };
 
   ngOnInit(): void {
     this.doneTasks = this.todoService.getDoneTasks();
-    console.log(this.doneTasks);
+    // console.log(this.doneTasks);
   }
+
 
   showAddTaskForm() {
     if (this.tasks.length === 0) {

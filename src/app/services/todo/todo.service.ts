@@ -14,7 +14,7 @@ export interface ITodo {
   category: CategoryType | null;
   isUrgent: boolean;
   doneDate: Date | null;
-  isComplete:boolean;
+  isComplete: boolean;
 }
 
 @Injectable({
@@ -32,7 +32,6 @@ export class TodoService {
       this.doneTasks = JSON.parse(doneTasks);
     }
   }
-
 
   addTask(task: ITodo): void {
     this.tasks.push(task);
@@ -53,9 +52,22 @@ export class TodoService {
     if (tasksString) {
       this.tasks = JSON.parse(tasksString);
     }
-    return this.tasks.filter((task) => task.isComplete == true);
+    return this.tasks
+      .filter((task) => task.isComplete == true)
+      .sort((a, b) => {
+        if (a.doneDate && b.doneDate) {
+          return (
+            new Date(b.doneDate).getTime() - new Date(a.doneDate).getTime()
+          );
+        } else if (a.doneDate && !b.doneDate) {
+          return -1;
+        } else if (!a.doneDate && b.doneDate) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
   }
-
 
   getTaskById(id: number): ITodo | undefined {
     return this.tasks.find((task) => task.id === id);
@@ -67,7 +79,7 @@ export class TodoService {
       this.saveTasks();
     }
   }
-   saveTasks(): void {
+  saveTasks(): void {
     const tasksJson = JSON.stringify(this.tasks);
     localStorage.setItem('tasks', tasksJson);
   }
@@ -98,11 +110,11 @@ export class TodoService {
   //     this.tasks.push(task);
   //   }
   // }
-    // addTask(task: ITodo): void {
+  // addTask(task: ITodo): void {
   //   this.tasks.push(task);
   //   localStorage.setItem('tasks', JSON.stringify(this.tasks));
   // }
-    // getDoneTasks(): ITodo[] {
+  // getDoneTasks(): ITodo[] {
   //   const tasksString = localStorage.getItem('tasks');
   //   if (tasksString) {
   //     this.tasks = JSON.parse(tasksString);
@@ -111,13 +123,11 @@ export class TodoService {
   //   return this.doneTasks;
   // }
 
-
   // addDoneTask(task: ITodo): void {
   //   const doneTasks = this.getDoneTasks();
   //   doneTasks.push(task);
   //   localStorage.setItem(this.doneTasksKey, JSON.stringify(doneTasks));
   // }
-
 
   // getDoneTasks(): ITodo[] {
   //   const doneTasksString = localStorage.getItem(this.doneTasksKey);
@@ -126,7 +136,4 @@ export class TodoService {
   //   }
   //   return JSON.parse(doneTasksString);
   // }
-
-
-
 }
