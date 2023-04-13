@@ -1,7 +1,7 @@
 <main>
 
   <!-- +1 -->
-  <ul class="container">
+  <ul class="container" *ngIf="doneTasks.length > 0">
     <p class="space">Historique des tâches :</p><br>
 
     <li *ngFor="let task of doneTasks" class="space">
