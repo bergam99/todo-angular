@@ -15,11 +15,9 @@ export class HistoryPage implements OnInit {
 
   constructor(private todoService: TodoService, private router: Router) {
     this.doneTasks = this.todoService.getDoneTasks();
-
     // this.doneTasks = this.todoService.getDoneTasks().sort((a, b) => {
     //   // Sort tasks in reverse chronological order based on doneDate
     //   return new Date(b.doneDate).getTime() - new Date(a.doneDate).getTime();
-
   };
 
   ngOnInit(): void {
@@ -34,17 +32,10 @@ export class HistoryPage implements OnInit {
     }}
 
     onCheckboxClick(event: Event, task: ITodo) {
-      // Empêcher le lien de la case à cocher de rediriger la page
-      event.stopPropagation();
-
       task.isComplete = !task.isComplete;
-      if (task.isComplete) {
-        task.doneDate = new Date(); // Initialiser la propriété doneDate avec la date actuelle
-        const index = this.tasks.indexOf(task);
-        if (index !== -1) {
-          // Supprimer la tâche du tableau des tâches non terminées
-          this.tasks.splice(index, 1);
-
+      if (!task.isComplete) {
+        task.doneDate = null;
+      }
           // Ajouter la tâche au tableau ades tâches terminées
           this.todoService.doneTasks.push(task);
 
@@ -52,9 +43,9 @@ export class HistoryPage implements OnInit {
           this.todoService.saveTasks();
         }
       }
-    }
+
   // showAddTaskForm() {
   //   if (this.tasks.length === 0) {
   //     this.router.navigate(['/add-task']);
   //   }}
-}
+
