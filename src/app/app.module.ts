@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './pages/home/home.page';
 import { CommonModule } from '@angular/common';
 import { HistoryPage } from './pages/history/history.page';
+import { Length0Component } from './components/length0/length0.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HistoryPage } from './pages/history/history.page';
     HeaderComponent,
     FooterComponent,
     HomePage,
-    HistoryPage
+    HistoryPage,
+    Length0Component
   ],
   imports: [
     BrowserModule,

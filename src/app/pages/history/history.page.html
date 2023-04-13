@@ -1,23 +1,18 @@
-<main>
 
   <!-- +1 -->
+  <section class="one">
   <ul class="container" *ngIf="doneTasks.length > 0">
-    <p class="space">Historique des tâches :</p><br>
+    <p class="space">Historique des tâches :</p>
 
     <li *ngFor="let task of doneTasks" class="space">
-
       <input class="circle" type="checkbox" [(ngModel)]="task.doneDate" (click)="onCheckboxClick($event, task)" />
-      &nbsp; &nbsp;{{task.category}}&nbsp;&nbsp;{{ task.content }}
+      &nbsp;{{ task.isUrgent ? '⚠️' : '' }}&nbsp;&nbsp;{{task.category}}&nbsp;&nbsp;{{ task.content }}
     </li>
   </ul>
+</section>
+
+
 
   <!-- 0 -->
-  <section *ngIf="doneTasks.length === 0">
-    <div class="flex">
-      <div class="margin-button">Votre historique est vide 😬</div>
-      <button class="button-aucune-tache" (click)="showAddTaskForm()">Créer une tâche</button>
-    </div>
-  </section>
-</main>
+<app-length0 *ngIf="doneTasks.length === 0" ></app-length0>
 
-<!--           (click)="onCheckboxClick($event, task)"  -->
