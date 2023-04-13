@@ -1,11 +1,15 @@
 <main [ngClass]="{'no-scroll': tasks.length === 0}">
     <!-- 0 -->
-  <section *ngIf="tasks.length === 0">
+  <!-- <section *ngIf="tasks.length === 0">
     <div class="flex">
       <div class="margin-button">Aucune tâche pour le moment 🙌</div>
       <button class="button-aucune-tache" (click)="showAddTaskForm()">Créer une tâche</button>
     </div>
-  </section>
+  </section> -->
+
+    <!-- 0 -->
+<app-length0 emptyText="Aucune tâche pour le moment 🙌"  buttonText="Créer une tâche" *ngIf="tasks.length === 0"></app-length0>
+
 
   <!-- 1+ -->
   <section class="container" *ngIf="tasks.length > 0">
