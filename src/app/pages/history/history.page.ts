@@ -30,9 +30,9 @@ export class HistoryPage implements OnInit {
     if (this.tasks.length === 0) {
       this.router.navigate(['/add-task']);
     }}
-
     onCheckboxClick(event: Event, task: ITodo) {
       task.isComplete = !task.isComplete;
+
       if (!task.isComplete) {
         task.doneDate = null;
       }
@@ -42,6 +42,7 @@ export class HistoryPage implements OnInit {
           // Enregistrer les modifications dans le stockage local
           this.todoService.saveTasks();
         }
+
       }
 
   // showAddTaskForm() {
