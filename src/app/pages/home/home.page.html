@@ -1,22 +1,14 @@
 <main [ngClass]="{'no-scroll': tasks.length === 0}">
-    <!-- 0 -->
-  <!-- <section *ngIf="tasks.length === 0">
-    <div class="flex">
-      <div class="margin-button">Aucune tâche pour le moment 🙌</div>
-      <button class="button-aucune-tache" (click)="showAddTaskForm()">Créer une tâche</button>
-    </div>
-  </section> -->
-
-    <!-- 0 -->
-<app-length0 emptyText="Aucune tâche pour le moment 🙌"  buttonText="Créer une tâche" *ngIf="tasks.length === 0"></app-length0>
-
+  <!-- 0 -->
+  <app-length0 emptyText="Aucune tâche pour le moment 🙌" buttonText="Créer une tâche"
+    *ngIf="tasks.length === 0"></app-length0>
 
   <!-- 1+ -->
   <section class="container" *ngIf="tasks.length > 0">
     <ul>
       <ng-container *ngFor="let task of tasks">
         <li *ngIf="!task.doneDate" (click)="editTask(task.id)" class="space">
-          <input class="checkbox-round" type="checkbox" [(ngModel)]="task.doneDate"
+          <input class="checkbox-round" type="checkbox"
             (click)="onCheckboxClick($event, task)" />&nbsp; &nbsp;
           {{ task.isUrgent ? '⚠️' : '' }} {{ task.category }} &nbsp;{{ task.content }}
         </li>
