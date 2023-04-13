@@ -5,7 +5,7 @@
     <p class="space">Historique des tâches :</p>
 
     <li *ngFor="let task of doneTasks" class="space">
-      <input class="circle" type="checkbox" [(ngModel)]="task.doneDate" (click)="onCheckboxClick($event, task)" />
+      <input class="circle" type="checkbox" (click)="onCheckboxClick($event, task)" />
       &nbsp;{{ task.isUrgent ? '⚠️' : '' }}&nbsp;&nbsp;{{task.category}}&nbsp;&nbsp;{{ task.content }}
     </li>
   </ul>
@@ -14,5 +14,5 @@
 
 
   <!-- 0 -->
-<app-length0 *ngIf="doneTasks.length === 0" ></app-length0>
+<app-length0 emptyText="Votre historique est vide 😬"  buttonText="Créer une tâche" *ngIf="doneTasks.length === 0"></app-length0>
 

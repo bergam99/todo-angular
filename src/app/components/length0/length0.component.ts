@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ITodo, TodoService } from 'src/app/services/todo/todo.service';
 
@@ -8,13 +8,13 @@ import { ITodo, TodoService } from 'src/app/services/todo/todo.service';
   styleUrls: ['./length0.component.scss'],
 })
 export class Length0Component  implements OnInit {
-
+  @Input() emptyText: string='';
+  @Input() buttonText: string='';
   // doneTasks: ITodo[] = [];
   tasks: ITodo[] = [];
 
 
   constructor(private todoService: TodoService, private router: Router) {
-    // this.doneTasks = this.todoService.getDoneTasks();
 
   }
   ngOnInit() {}
