@@ -2,11 +2,13 @@
 
   <!-- +1 -->
   <ul class="container">
-    <p>Historique des tâches :</p>
-    <li *ngFor="let task of doneTasks">
-      <input class="checkbox-round" type="checkbox" [(ngModel)]="task.doneDate"
-            (click)="onCheckboxClick($event, task)" />&nbsp; &nbsp;
-            {{task.category}}{{ task.content }}</li>
+    <p class="space">Historique des tâches :</p><br>
+
+    <li *ngFor="let task of doneTasks" class="space">
+
+      <input class="circle" type="checkbox" [(ngModel)]="task.doneDate" (click)="onCheckboxClick($event, task)" />
+      &nbsp; &nbsp;{{task.category}}&nbsp;&nbsp;{{ task.content }}
+    </li>
   </ul>
 
   <!-- 0 -->
