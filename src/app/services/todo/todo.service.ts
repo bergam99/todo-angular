@@ -44,8 +44,11 @@ export class TodoService {
     if (tasksString) {
       this.tasks = JSON.parse(tasksString);
     }
-    return this.tasks.filter((task) => task.doneDate === null);
+    // return this.tasks.filter((task) => task.doneDate === null);
+    return this.tasks.filter((task) => task.isComplete === false && task.doneDate === null);
+
   }
+
 
   getDoneTasks(): ITodo[] {
     const tasksString = localStorage.getItem('tasks');
