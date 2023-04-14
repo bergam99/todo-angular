@@ -100,6 +100,7 @@
 
   - il affiche addTask form quand on click sur le button grâce à showAddTaskForm().
 
+---
   ### service
 
   ###### Todo.service :
