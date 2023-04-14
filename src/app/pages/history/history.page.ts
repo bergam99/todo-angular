@@ -22,11 +22,11 @@ export class HistoryPage implements OnInit {
     // console.log(this.doneTasks);
   }
 
-  showAddTaskForm() {
-    if (this.tasks.length === 0) {
-      this.router.navigate(['/add-task']);
-    }
-  }
+  // showAddTaskForm() {
+  //   if (this.tasks.length === 0) {
+  //     this.router.navigate(['/add-task']);
+  //   }
+  // }
 
   onCheckboxClick(event: Event, task: ITodo) {
     task.isComplete = !task.isComplete;

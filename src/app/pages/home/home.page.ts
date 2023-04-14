@@ -45,12 +45,15 @@ export class HomePage {
         // Enregistrer les modifications dans le stockage local
         this.todoService.saveTasks();
       }
+    } else {
+      task.doneDate = null; // Set doneDate to null when isComplete is false
     }
   }
-  showAddTaskForm() {
-    if (this.tasks.length === 0) {
-      this.router.navigate(['/add-task']);
-    }}
+
+  // showAddTaskForm() {
+  //   if (this.tasks.length === 0) {
+  //     this.router.navigate(['/add-task']);
+  //   }}
 
 
 }
