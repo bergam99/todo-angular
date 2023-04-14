@@ -96,7 +96,7 @@
 
   - Grâce à *ngIf, il est affiché sur home & history page seulement quand il y a pas de task. 
 
-  - il reçoit les contenues dans "div" et "button" grâce à "@Input" et son appellation
+  - il reçoit les contenues dans "div" et "button" grâce à "@Input" et son interpollation
 
   - il affiche addTask form quand on click sur le button grâce à showAddTaskForm().
 
