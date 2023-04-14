@@ -81,17 +81,18 @@
 
   - A chaque fois qu'on click sur checkbox, grâce à onCheckboxclick(), switch "isComplete" et enregistrer dans la service.
 
+---
 ### Composants
 
-- Header :
+###### Header :
 
   - header et footer sont applés dans <app> pour les afficher sur toutes les pages.
 
-- Footer : 
+###### Footer : 
 
   - générer les paths et changer la couleur selon le path.
 
-- Length0 : 
+###### Length0 : 
 
   - Grâce à *ngIf, il est affiché sur home & history page seulement quand il y a pas de task. 
 
@@ -101,8 +102,8 @@
 
   ### service
 
-  - Todo.service :
+  ###### Todo.service :
 
     - il fait rassembler les datas et les disperser.
-    
+
     - il fait le rôle de passerelle des datas
