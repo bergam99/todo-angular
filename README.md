@@ -104,6 +104,6 @@
 
   ###### Todo.service :
 
-    - il fait rassembler les datas et les disperser.
+  - il fait rassembler les datas et les disperser.
 
-    - il fait le rôle de passerelle des datas
+  - il fait le rôle de passerelle des datas
