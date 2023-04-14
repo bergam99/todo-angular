@@ -71,10 +71,14 @@
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
   opacity: 0;
-
-  // transition: opacity 0.2s ease-in-out;
 }
 
+// =====
+// Hide check icon when checkbox is checked
 .circle:checked::before {
+  opacity: 0;
+}
+
+.circle:not(:checked)::before {
   opacity: 1;
 }
