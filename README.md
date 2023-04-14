@@ -43,7 +43,7 @@
 
   - Home page permet d'afficher les tâches qui sont ajoutées depuis "add-task" page.
 
-  - S'il y a 0 tâche, afficher le composant <app-length0> en envoyant son contenue (emptyText & buttonText) via @Input.
+  - S'il y a 0 tâche, afficher le composant "app-length0" en envoyant son contenue (emptyText & buttonText) via @Input.
 
   - Prendre les tâches via "getTasks" venant de todo.service seulement les tâches qui ont task.isComplete === false  && task.doneDate === null.
 
@@ -75,7 +75,7 @@
 
 ###### History :
 
-  - Comme dans Home page, s'il y a plus d'une tâche, alors afficher la list de tasks, sinon, s'il y a 0 tâche alors afficher <app-length0> component en envoyant son contenue via @Input.
+  - Comme dans Home page, s'il y a plus d'une tâche, alors afficher la list de tasks, sinon, s'il y a 0 tâche alors afficher "app-length0" component en envoyant son contenue via @Input.
 
   - History page ramène et affiche getDoneTasks() depuis la service qui filtre "isComplete === true" et range les tâches selon leur "doneDate" en utilisant sort().
 
@@ -86,7 +86,7 @@
 
 ###### Header :
 
-  - header et footer sont applés dans <app> pour les afficher sur toutes les pages.
+  - header et footer sont applés dans "app" pour les afficher sur toutes les pages.
 
 ###### Footer : 
 
@@ -96,7 +96,7 @@
 
   - Grâce à *ngIf, il est affiché sur home & history page seulement quand il y a pas de task. 
 
-  - il reçoit les contenues dans <div> et <button> grâce à "@Input" et son {{appellation}}
+  - il reçoit les contenues dans "div" et "button" grâce à "@Input" et son appellation
 
   - il affiche addTask form quand on click sur le button grâce à showAddTaskForm().
 
